@@ -99,6 +99,8 @@ var country = svg.selectAll(".country").data(countries);
     country
       .on("mousemove", function(d,i) {
       	
+      	$('#info').html("<h2>" + d.name + "</h2>Population: <span class='population'>" + d.value.toString().replace(/\B(?=(\d{3})+(?|\d))/g, ",") + "</span>");
+      	
       	d3.select(this).style("stroke", "yellow")
       	.style( "stroke-width", "1.2px");
       	
